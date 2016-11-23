@@ -2,7 +2,8 @@
 
 $page_title = 'Flora Marcos Ono';
 require('header.php');
-echo '
+?>
+
 <h1>Welcome to this page!</h1>
 <p>Ola mundo</p>
 <div class="row">
@@ -18,4 +19,3 @@ echo '
   </div>
 </div>';
 
-?>
