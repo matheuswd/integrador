@@ -4,7 +4,6 @@
 	<title><?php echo $page_title; ?></title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="assets/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/full-slider.css">
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="assets/jquery.min.js"></script>
 	<script src="assets/bootstrap.min.js"></script>
