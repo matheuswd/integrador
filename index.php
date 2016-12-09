@@ -1,39 +1,9 @@
 <?php
 
 $page_title = 'Flora Marcos Ono';
-require('header.php');
+require_once('header.php');
+require_once ('nav.php');
 ?>
-
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" xmlns="http://www.w3.org/1999/html">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Start Bootstrap</a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-</nav>
 <header id="myCarousel" class="carousel slide">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -60,13 +30,6 @@ require('header.php');
         </div>
         <div class="item">
             <!-- Set the third background image using inline CSS below. -->
-            <div class="fill" style="background-image:url('images/aue.jpg');"></div>
-            <div class="carousel-caption">
-                <h2>Caption 3</h2>
-            </div>
-        </div>
-        <div class="item">
-            <!-- Set the third background image using inline CSS below. -->
             <div class="fill" style="background-image:url('images/b52.jpg');"></div>
             <div class="carousel-caption">
                 <h2>Caption 4</h2>
@@ -83,7 +46,7 @@ require('header.php');
     </a>
 
 </header>
-<article class="container-fluid">
+<article class="container">
     <div class="row">
         <h1 class="text-center">Dionaeas Muscipulas</h1>
         <?php
@@ -117,11 +80,10 @@ require('header.php');
         </div>';
         }
         ?>
-    </div>
     <div class="text-center">
-        <input type="button" class="btn btn-info" value="Veja Mais">
+        <a href="#"><input type="button" class="btn btn-info" value="Veja Mais"></a>
     </div>
-    <h1>Sarracenias</h1>
+    <h1 class="text-center">Sarracenias</h1>
     <?php
 
     $values = array (
@@ -153,4 +115,46 @@ require('header.php');
         </div>';
     }
     ?>
+    <div class="text-center">
+        <a href="#"><input type="button" class="btn btn-info" value="Veja Mais"></a>
+    </div>
+    </div>
 </article>
+<section class="container" >
+<div class="row">
+    <div class="col-md-6 ">
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nome</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nome">
+            </div>
+            <div class="form-group ">
+                <label for="exampleInputPassword1">E-mail</label>
+                <input type="email" class="form-control" id="exampleInputPassword1" placeholder="E-mail">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Titulo</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Titulo">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Mensagem</label>
+                <textarea type="text" class="form-control" id="exampleInputPassword1" placeholder="Mensagem"></textarea>
+            </div>
+            <button type="submit" class="btn btn-default pull-right">Submit</button>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <iframe
+            width="100%"
+            height="370px"
+            frameborder="0" style="border:0"
+            src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY
+      &q=Butchart+Gardens+Victoria+BC
+      &attribution_source=Google+Maps+Embed+API
+      &attribution_web_url=http://www.butchartgardens.com/
+      &attribution_ios_deep_link_id=comgooglemaps://?daddr=Butchart+Gardens+Victoria+BC" allowfullscreen>
+        </iframe>
+    </div>
+</div>
+</section>
+<?php require_once ('footer.php');
