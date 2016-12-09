@@ -3,7 +3,7 @@
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
-
+/* Carousel */
 html,
 body {
     height: 100%;
@@ -30,14 +30,19 @@ body {
     -o-background-size: cover;
 }
 
-footer {
-    margin: 50px 0;
+.carousel-caption {
+    bottom: 15px;
+}
+.carousel-indicators {
+    bottom: 10px;
+}
+/* O circulo de down */
+@-webkit-keyframes circleBounce {
+    0% {-webkit-transform: scale(0.9); opacity: 0;}
+    20% {opacity: 0.5;}
+    50% {opacity: 1;}
+    80% {opacity: 0.5;}
+    100% {-webkit-transform: scale(1.1); opacity:0;}
 }
 
-.thumbnail > img {
-    border-radius: 5px;
-}
-.thumbnail{
-
-    border-color: white;
-}
+/* Form */
