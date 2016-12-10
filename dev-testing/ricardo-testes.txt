@@ -1,0 +1,25 @@
+Banco: Hana
+|
+|---Tabelas:
+    |
+    |----planta
+    |    |
+    |    |--Atrib:
+    |        |-codPlanta
+    |        |-nome
+    |        |-descricao
+    |        |-codTipo
+    |
+    |----tipo
+    |    |
+    |    |--Atrib:
+    |        |-codTipo
+    |        |-tipo
+    |
+    |----produtor
+         |
+         |--Atrib:
+            |-codProdutor
+            |-nome
+            |-dataNasc
+            |-historia

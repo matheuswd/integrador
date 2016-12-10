@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 $page_title = 'Flora Marcos Ono';
 require_once('header.php');
@@ -80,7 +80,7 @@ require_once ('config/database-connection.php');
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
                 <div class="caption">
-                    <h3 class="text-center">' . $values['nome'] . '</h3>
+                    <h3 class="text-center"><a href="planta.php?nome='. $values['nome'] .'" >' . $values['nome'] . '</a></h3>
                     <p>'. $values['codPlanta'] .'</p>
                 </div>
             </div>
