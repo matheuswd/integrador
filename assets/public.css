@@ -36,13 +36,8 @@ body {
 .carousel-indicators {
     bottom: 10px;
 }
-/* O circulo de down */
-@-webkit-keyframes circleBounce {
-    0% {-webkit-transform: scale(0.9); opacity: 0;}
-    20% {opacity: 0.5;}
-    50% {opacity: 1;}
-    80% {opacity: 0.5;}
-    100% {-webkit-transform: scale(1.1); opacity:0;}
-}
 
-/* Form */
+/* Tadashi estilo */
+.plantaimg {
+   padding: 10px 15px 5px 0;
+}

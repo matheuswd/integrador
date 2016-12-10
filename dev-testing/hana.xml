@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.5.1
+- https://www.phpmyadmin.net
+-
+- Host: 127.0.0.1
+- Generation Time: 10-Dez-2016 às 03:44
+- Versão do servidor: 10.1.13-MariaDB
+- PHP Version: 5.6.23
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="http://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="hana" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="planta">
+                CREATE TABLE `planta` (
+                  `codPlanta` int(11) NOT NULL AUTO_INCREMENT,
+                  `nome` varchar(50) NOT NULL,
+                  `codTipo` int(11) NOT NULL,
+                  PRIMARY KEY (`codPlanta`),
+                  KEY `codTipo` (`codTipo`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="tipo">
+                CREATE TABLE `tipo` (
+                  `codTipo` int(11) NOT NULL AUTO_INCREMENT,
+                  `tipo` varchar(20) NOT NULL,
+                  PRIMARY KEY (`codTipo`),
+                  CONSTRAINT `tipo_ibfk_1` FOREIGN KEY (`codTipo`) REFERENCES `planta` (`codTipo`) ON DELETE NO ACTION ON UPDATE NO ACTION
+                ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Database: 'hana'
+    -->
+    <database name="hana">
+        <!-- Tabela planta -->
+        <table name="planta">
+            <column name="codPlanta">1</column>
+            <column name="nome">B52</column>
+            <column name="codTipo">1</column>
+        </table>
+        <table name="planta">
+            <column name="codPlanta">2</column>
+            <column name="nome">Red Dragon</column>
+            <column name="codTipo">1</column>
+        </table>
+        <table name="planta">
+            <column name="codPlanta">3</column>
+            <column name="nome">Leucophylla</column>
+            <column name="codTipo">2</column>
+        </table>
+        <table name="planta">
+            <column name="codPlanta">4</column>
+            <column name="nome">Flava Red Tube</column>
+            <column name="codTipo">2</column>
+        </table>
+        <table name="planta">
+            <column name="codPlanta">5</column>
+            <column name="nome">B52a</column>
+            <column name="codTipo">1</column>
+        </table>
+        <table name="planta">
+            <column name="codPlanta">6</column>
+            <column name="nome">B52da</column>
+            <column name="codTipo">1</column>
+        </table>
+        <table name="planta">
+            <column name="codPlanta">7</column>
+            <column name="nome">Red Dragonasd</column>
+            <column name="codTipo">1</column>
+        </table>
+        <table name="planta">
+            <column name="codPlanta">8</column>
+            <column name="nome">B52aasdaad</column>
+            <column name="codTipo">1</column>
+        </table>
+        <table name="planta">
+            <column name="codPlanta">9</column>
+            <column name="nome">Red Dragon asd f sdf</column>
+            <column name="codTipo">1</column>
+        </table>
+        <table name="planta">
+            <column name="codPlanta">10</column>
+            <column name="nome">Leucophylla albina</column>
+            <column name="codTipo">2</column>
+        </table>
+        <table name="planta">
+            <column name="codPlanta">11</column>
+            <column name="nome">Leucophylla alta</column>
+            <column name="codTipo">2</column>
+        </table>
+        <table name="planta">
+            <column name="codPlanta">12</column>
+            <column name="nome">Leucophylla Leuco</column>
+            <column name="codTipo">2</column>
+        </table>
+        <table name="planta">
+            <column name="codPlanta">13</column>
+            <column name="nome">Flava Red Tube x Tadashi</column>
+            <column name="codTipo">2</column>
+        </table>
+        <table name="planta">
+            <column name="codPlanta">14</column>
+            <column name="nome">Leucophylla albina alta</column>
+            <column name="codTipo">2</column>
+        </table>
+        <table name="planta">
+            <column name="codPlanta">15</column>
+            <column name="nome">Leucophylla robusta</column>
+            <column name="codTipo">2</column>
+        </table>
+        <table name="planta">
+            <column name="codPlanta">16</column>
+            <column name="nome">Intermedia</column>
+            <column name="codTipo">3</column>
+        </table>
+        <table name="planta">
+            <column name="codPlanta">17</column>
+            <column name="nome">Gigantea</column>
+            <column name="codTipo">4</column>
+        </table>
+        <table name="planta">
+            <column name="codPlanta">18</column>
+            <column name="nome">Wesser</column>
+            <column name="codTipo">4</column>
+        </table>
+        <table name="planta">
+            <column name="codPlanta">19</column>
+            <column name="nome">Aphrodite</column>
+            <column name="codTipo">4</column>
+        </table>
+        <!-- Tabela tipo -->
+        <table name="tipo">
+            <column name="codTipo">1</column>
+            <column name="tipo">Dionaea</column>
+        </table>
+        <table name="tipo">
+            <column name="codTipo">2</column>
+            <column name="tipo">Sarracenia</column>
+        </table>
+        <table name="tipo">
+            <column name="codTipo">3</column>
+            <column name="tipo">Drosera</column>
+        </table>
+        <table name="tipo">
+            <column name="codTipo">4</column>
+            <column name="tipo">Pinguicula</column>
+        </table>
+    </database>
+</pma_xml_export>
