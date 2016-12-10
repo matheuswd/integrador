@@ -3,6 +3,7 @@
 $page_title = 'Flora Marcos Ono';
 require_once('header.php');
 require_once ('nav.php');
+require_once ('config/database-connection.php');
 ?>
 <header id="myCarousel" class="carousel slide">
     <!-- Indicators -->
@@ -47,106 +48,97 @@ require_once ('nav.php');
 
 </header>
 <article class="container">
-    <div class="row">
-        <h1 class="text-center">Dionaeas Muscipulas</h1>
         <?php
 
-        $values = array (
-            0 => array(
-                'img' => 'images/aue.jpg',
-                'nome' => 'AUE PLANTA'
-            ),
-            1 => array(
-            'img' => 'images/b52.jpg',
-            'nome' => 'Plantas diferentes'
-            ),
-            2 => array(
-                'img' => 'images/aue.jpg',
-                'nome' => 'AUE PLANTA'
-            )
-        );
-        for ($x = 0; $x < count($values); $x++) {
-        echo'
+        $sql = "SELECT COUNT(*) FROM tipo";
+        $select = $pdo->query("SELECT tipo FROM tipo ")->fetchAll();
+
+        // atribuindo a quantidade de linhas retornadas
+        $count = count($select);
+
+        // imprimindo o resultado
+
+
+        $cont = 0;
+        for ($as = 0; $as < count($select); $as++) {
+
+            $sql = "SELECT A.nome, A.codPlanta, B.codTipo, B.tipo FROM planta A INNER JOIN tipo B on A.codTipo = B.codTipo WHERE B.tipo = '". $select[$as]['tipo'] ."' ORDER BY rand()";
+            $sql = $pdo->query($sql);
+
+
+            echo '
+        <div class="row">
+        <h1 class="text-center">' . $select[$as]['tipo'] . '</h1>';
+
+            if($sql->rowCount() > 0) {
+
+                $cont = 0;
+                foreach ($sql->fetchAll() as $values) {
+                    $y = 0;
+                    $x = 0;
+                    echo '
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-                <img src="'.$values[$x]['img'].'" alt="...">
                 <div class="caption">
-                    <h3 class="text-center">'.$values[$x]['nome'].'</h3>
-                    <p>AAA</p>
-                    <p>BBB</p>
-                    <p>CCC</p>
+                    <h3 class="text-center">' . $values['nome'] . '</h3>
+                    <p>'. $values['codPlanta'] .'</p>
                 </div>
             </div>
         </div>';
+                    $x = 0;
+                    $cont++;
+                    if ($cont > 5){
+                        break;
+                    }
+                }
+                echo '
+        <div class="text-center col-md-12">
+            <a href="lista.php?codTipo='. base64_encode($values['codTipo']) .'&titulo='. base64_encode($values['tipo']) .'" ><input type="button" class="btn btn-info" value="Veja Mais"></a>
+        </div>
+    </div>';
+            }
         }
         ?>
-    <div class="text-center">
-        <a href="#"><input type="button" class="btn btn-info" value="Veja Mais"></a>
-    </div>
-    <h1 class="text-center">Sarracenias</h1>
-    <?php
-
-    $values = array (
-        0 => array(
-            'img' => 'images/aue.jpg',
-            'nome' => 'AUE PLANTA'
-        ),
-        1 => array(
-            'img' => 'images/phantom.jpg',
-            'nome' => 'Plantas diferentes'
-        ),
-        2 => array(
-            'img' => 'images/reddragon.jpg',
-            'nome' => 'AUE PLANTA'
-        )
-    );
-    for ($x = 0; $x < count($values); $x++) {
-        echo'
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <img src="'.$values[$x]['img'].'" alt="...">
-                <div class="caption">
-                    <h3 class="text-center">'.$values[$x]['nome'].'</h3>
-                    <p>AAA</p>
-                    <p>BBB</p>
-                    <p>CCC</p>
-                </div>
-            </div>
-        </div>';
-    }
-    ?>
-    <div class="text-center">
-        <a href="#"><input type="button" class="btn btn-info" value="Veja Mais"></a>
-    </div>
-    </div>
 </article>
 <section class="container" >
 <div class="row">
-    <div class="col-md-6 ">
-        <form>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Nome</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nome">
+        <form class="col-md-5">
+            <h2 class="text-center">Mande sua duvida</h2>
+            <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Nome</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nome">
+                </div>
             </div>
-            <div class="form-group ">
-                <label for="exampleInputPassword1">E-mail</label>
-                <input type="email" class="form-control" id="exampleInputPassword1" placeholder="E-mail">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">E-mail</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="E-mail">
+                </div>
             </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Titulo</label>
-                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Titulo">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Titulo</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Titulo">
+                </div>
             </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Mensagem</label>
-                <textarea type="text" class="form-control" id="exampleInputPassword1" placeholder="Mensagem"></textarea>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Comentario</label>
+                    <textarea type="text" class="form-control" id="exampleInputEmail1" placeholder="Comentario"></textarea>
+                </div>
             </div>
-            <button type="submit" class="btn btn-default pull-right">Submit</button>
+                <div class="col-md-12">
+            <input type="submit" class="btn btn-success pull-right">
+                </div>
+                </div>
         </form>
-    </div>
-    <div class="col-md-6">
+    <div class="col-md-7 pull-right">
+        <h2 class="text-center">Localização</h2>
         <iframe
             width="100%"
-            height="370px"
+            height="295px"
             frameborder="0" style="border:0"
             src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY
       &q=Butchart+Gardens+Victoria+BC

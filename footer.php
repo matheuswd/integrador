@@ -30,5 +30,7 @@ echo '
     </div>
     
 </footer>
+</body>
+</html
 ';
 ?>
