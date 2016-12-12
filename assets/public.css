@@ -39,5 +39,15 @@ body {
 
 /* Tadashi estilo */
 .plantaimg {
-   padding: 10px 15px 5px 0;
+   padding: 0;
+}
+#down {
+    margin-top: 60px;
+}
+#table-bottom {
+    margin-bottom: 5px;
+}
+.padlr {
+    padding-left: 15px;
+    padding-right: 15px;
 }

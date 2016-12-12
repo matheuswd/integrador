@@ -5,7 +5,7 @@
 - https://www.phpmyadmin.net
 -
 - Host: 127.0.0.1
-- Generation Time: 12-Dez-2016 às 16:58
+- Generation Time: 12-Dez-2016 às 17:10
 - Versão do servidor: 10.1.13-MariaDB
 - PHP Version: 5.6.23
 -->
@@ -21,7 +21,7 @@
                   `codCarrousel` int(11) NOT NULL AUTO_INCREMENT,
                   `imagem` varchar(100) NOT NULL,
                   PRIMARY KEY (`codCarrousel`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+                ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
             </pma:table>
             <pma:table name="imagem">
                 CREATE TABLE `imagem` (
@@ -82,15 +82,11 @@
         <!-- Tabela carrousel -->
         <table name="carrousel">
             <column name="codCarrousel">1</column>
-            <column name="imagem">phantom.jpg</column>
+            <column name="imagem">b52.jpg</column>
         </table>
         <table name="carrousel">
             <column name="codCarrousel">2</column>
-            <column name="imagem">reddragon.jpg</column>
-        </table>
-        <table name="carrousel">
-            <column name="codCarrousel">3</column>
-            <column name="imagem">b52.jpg</column>
+            <column name="imagem">phantom.jpg</column>
         </table>
         <!-- Tabela imagem -->
         <table name="imagem">

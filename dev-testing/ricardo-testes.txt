@@ -9,6 +9,9 @@ Banco: Hana
     |        |-nome
     |        |-descricao
     |        |-codTipo
+    |        |-nomeCientif
+    |        |-localizacao
+    |        |-codRaro
     |
     |----tipo
     |    |
@@ -17,9 +20,22 @@ Banco: Hana
     |        |-tipo
     |
     |----produtor
-         |
-         |--Atrib:
-            |-codProdutor
-            |-nome
-            |-dataNasc
-            |-historia
+    |    |
+    |    |--Atrib:
+    |       |-codProdutor
+    |       |-nome
+    |       |-dataNasc
+    |       |-historia
+    |
+    |----imagem
+    |    |
+    |    |--Atrib:
+    |       |-codImagem
+    |       |-imagem
+    |       |-codPlanta
+    |
+    |----raridade
+    |    |
+    |    |--Atrib:
+    |       |-codRaro
+    |       |-raro

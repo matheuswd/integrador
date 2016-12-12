@@ -5,19 +5,36 @@ require_once ('nav.php');
 require_once ('config/database-connection.php');
 ?>
 <header class="jumbotron">
+<?php
 
+$ti[0] = $_GET["codTipo"];
+$ti[1] = $_GET["tipo"];
+    echo '<h1 class="text-center">'. $ti[1] .'</h1>';
+?>
 </header>
+
 <article class="container">
     <?php
-    $ti[0] = base64_decode($_GET["codTipo"]);
-    $ti[1] = base64_decode($_GET["titulo"]);
 
-        $sql = "SELECT A.nome, A.codPlanta, B.tipo FROM planta A INNER JOIN tipo B on A.codTipo = B.codTipo WHERE B.codTipo = '$ti[0]'";
-        $sql = $pdo->query($sql);
+    $ti[0] = $_GET["codTipo"];
+    $ti[1] = $_GET["tipo"];
+    $sql = "SELECT DISTINCT A.nome, A.codPlanta, A.nomeCientif, A.localizacao, B.codTipo, B.tipo, I.imagem, R.raro 
+                      FROM planta A 
+                        INNER JOIN tipo B 
+                          on A.codTipo = B.codTipo 
+                        INNER JOIN imagem I 
+                          on A.codPlanta = I.codPlanta 
+                        INNER JOIN raridade R
+                          on A.codRaro = R.codRaro
+                      WHERE B.tipo = '". $ti[1] ."'";
+    $sql = $pdo->query($sql);
 
         echo '
-        <div class="row">
-        <h1 class="text-center">' . $ti[1] . '</h1>';
+   <ol class="breadcrumb">
+        <li><a href="./">Página Inicial</a></li>
+        <li>'. $ti[1] .'</li>
+    </ol>
+        <div class="row">';
 
         if($sql->rowCount() > 0) {
 
@@ -27,9 +44,24 @@ require_once ('config/database-connection.php');
                 echo '
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
+            
+                <img src="images/'. $values['imagem'] .'">
                 <div class="caption">
-                    <h3 class="text-center">' . $values['nome'] . '</h3>
-                    <p>'. $values['codPlanta'] .'</p>
+                    <h3 class="text-center"><a href="planta.php?nome='. $values['nome'] .'" >' . $values['nome'] . '</a></h3>
+                    <table class="table " id="table-bottom">
+                        <tr>
+                            <td>Nome cientifico: </td>
+                            <td>'. $values['nomeCientif'] .'</td>
+                        </tr>
+                        <tr>
+                            <td>Localizado: </td>
+                            <td>'. $values['localizacao'] .'</td>
+                        </tr>
+                        <tr>
+                            <td>Raridade: </td>
+                            <td>'. $values['raro'] .'</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>';
@@ -39,7 +71,6 @@ require_once ('config/database-connection.php');
     </div>';
         }
     ?>
-
 </article>
 <?php
 require_once ('footer.php');

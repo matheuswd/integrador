@@ -14,7 +14,7 @@ if (isset($_POST['nome']) && empty($_POST['nome']) == false){
     } else {
         echo '<p>Algo de errado aconteceu</p>';
     }
-    header('Location: index.php');
+    header('Location: index1.php');
 }
 
 ?>
