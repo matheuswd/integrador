@@ -1,0 +1,41 @@
+Banco: Hana
+|
+|---Tabelas:
+    |
+    |----planta
+    |    |
+    |    |--Atrib:
+    |        |-codPlanta
+    |        |-nome
+    |        |-descricao
+    |        |-codTipo
+    |        |-nomeCientif
+    |        |-localizacao
+    |        |-codRaro
+    |
+    |----tipo
+    |    |
+    |    |--Atrib:
+    |        |-codTipo
+    |        |-tipo
+    |
+    |----produtor
+    |    |
+    |    |--Atrib:
+    |       |-codProdutor
+    |       |-nome
+    |       |-dataNasc
+    |       |-historia
+    |
+    |----imagem
+    |    |
+    |    |--Atrib:
+    |       |-codImagem
+    |       |-imagem
+    |       |-codPlanta
+    |
+    |----raridade
+    |    |
+    |    |--Atrib:
+    |       |-codRaro
+    |       |-raro

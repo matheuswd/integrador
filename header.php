@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+	<meta charset="utf-8">
+
+
 	<title><?php echo $page_title; ?></title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="assets/bootstrap.min.css">
