@@ -51,3 +51,9 @@ body {
     padding-left: 15px;
     padding-right: 15px;
 }
+#padl {
+    padding-left: 0px;
+}
+#padr {
+    padding-right: 0px;
+}
