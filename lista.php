@@ -27,7 +27,7 @@ $ti[1] = $_GET["tipo"];
                         INNER JOIN raridade R
                           on A.codRaro = R.codRaro
                       WHERE B.tipo = '". $ti[1] ."'";
-    $sql = $pdo->query($sql);
+    $sql = $conexao->query($sql);
 
         echo '
    <ol class="breadcrumb">
@@ -36,9 +36,9 @@ $ti[1] = $_GET["tipo"];
     </ol>
         <div class="row">';
 
-        if($sql->rowCount() > 0) {
+        if($sql->num_rows > 0) {
 
-            foreach ($sql->fetchAll() as $values) {
+           while ($values = $sql->fetch_array()) {
                 $y = 0;
                 $x = 0;
                 echo '
