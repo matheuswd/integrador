@@ -9,9 +9,9 @@ $v = $_GET['nome'];
 
         <?php
         $sql = "SELECT A.nome, A.codPlanta, A.descricao, B.codTipo, B.tipo, I.imagem, A.nomeCientif, A.localizacao, R.raro FROM planta A INNER JOIN tipo B on A.codTipo = B.codTipo INNER JOIN imagem I on A.codPlanta = I.codPlanta  INNER  JOIN  raridade R on A.codRaro = R.codRaro WHERE A.nome = '$v'";
-        $sql = $pdo->query($sql);
-        if($sql->rowCount() > 0) {
-            foreach ($sql->fetchAll() as $user) {
+        $sql = $conexao->query($sql);
+        if($sql->num_rows > 0) {
+            while ($user = $sql->fetch_array()) {
 
                 echo '
        <ol class="breadcrumb">
