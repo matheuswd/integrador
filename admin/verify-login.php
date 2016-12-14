@@ -1,16 +1,11 @@
 <?php
 
-$host = "localhost";
-$user = "root";
-$pass = "";
-$banco = "hana";
-
-$conexao = mysqli_connect($host, $user, $pass, $banco) or die ("Problemas com a conexão do Banco de Dados");
+require '../config/database-connection.php';
 
 $login = $_POST['login'];
 $senha = $_POST['senha'];
 
-$sqlstring = "select * from user where login = '$login' and senha='$senha'";
+$sqlstring = "SELECT * FROM user WHERE username = '$login' AND password='$senha'";
 $info = mysqli_query($conexao, $sqlstring);
 if (!$info) {
     die('Query Inválida: ' . mysqli_error());
@@ -26,15 +21,12 @@ if($registro!=1) {
 
 } else {
 
-    echo "Bem vindo ao sistema";
-    $dados = mysqli_fetch_array($info);
-
-    session_start('log');
-    $_SESSION['id'] = $dados['codUser'];
-    $_SESSION['nome'] = $dados['login'];
-    $_SESSION['log'] = 'ativo';
-
-    header("location:index.php");
+	// $dados = mysqli_fetch_array($info);
+ //    session_start('log');
+ //    $_SESSION['id'] = $dados['codUser'];
+ //    $_SESSION['nome'] = $dados['login'];
+ //    $_SESSION['log'] = 'ativo';
+    header("Location: index.php");
 
 }
 
