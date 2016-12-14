@@ -16,14 +16,17 @@ echo'
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="planta.php">Planta</a>
+            <ul class="nav navbar-nav " >
+                <li >
+                    <a id="nav-hover" href="planta.php" >Planta</a>
                 </li>
                 <li>
-                    <a href="about.php">Sobre</a>
+                    <a id="nav-hover" href="about.php" id="hover-nav">Sobre</a>
                 </li>
+                
+
             </ul>
+
         </div>
         <!-- /.navbar-collapse -->
     </div>

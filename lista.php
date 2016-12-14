@@ -30,9 +30,9 @@ $ti[1] = $_GET["tipo"];
     $sql = $pdo->query($sql);
 
         echo '
-   <ol class="breadcrumb">
-        <li><a href="./">Página Inicial</a></li>
-        <li>'. $ti[1] .'</li>
+   <ol class="breadcrumb" id="nav-secun-plantas-lista">
+        <li><a href="./"><img id="ico-home" src="images/home.ico" alt="imagem do icone referênte a home"></a></li>
+        <li >'. $ti[1] .'</li>
     </ol>
         <div class="row">';
 
@@ -47,7 +47,7 @@ $ti[1] = $_GET["tipo"];
             
                 <img src="images/'. $values['imagem'] .'">
                 <div class="caption">
-                    <h3 class="text-center"><a href="planta.php?nome='. $values['nome'] .'" >' . $values['nome'] . '</a></h3>
+                    <h3 class="text-center"><a id="link-planta-lista" href="planta.php?nome='. $values['nome'] .'" >' . $values['nome'] . '</a></h3>
                     <table class="table " id="table-bottom">
                         <tr>
                             <td>Nome cientifico: </td>
