@@ -14,7 +14,7 @@ require_once "header-admin.php";
 ?>
 
 <body class="background">
-<video loop muted autoplay class="fullscreen-bg__video">
+ <video loop muted autoplay class="fullscreen-bg__video">
     <source src="assets/footage.webm" type="video/webm">
 </video>
 <!-- Where all the magic happens -->
@@ -34,11 +34,11 @@ require_once "header-admin.php";
 				<div class="login-group">
 					<div class="form-group">
 						<label for="username" class="sr-only">Username</label>
-						<input type="text" class="form-control" id="username" name="username" placeholder="username">
+						<input type="text" class="form-control" id="login" name="login" placeholder="username">
 					</div>
 					<div class="form-group">
 						<label for="password" class="sr-only">Password</label>
-						<input type="password" class="form-control" id="password" name="password" placeholder="password">
+						<input type="password" class="form-control" id="senha" name="senha" placeholder="password">
 					</div>
 				</div>
 				<button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>

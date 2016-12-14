@@ -9,22 +9,22 @@ $v = $_GET['nome'];
 
         <?php
         $sql = "SELECT A.nome, A.codPlanta, A.descricao, B.codTipo, B.tipo, I.imagem, A.nomeCientif, A.localizacao, R.raro FROM planta A INNER JOIN tipo B on A.codTipo = B.codTipo INNER JOIN imagem I on A.codPlanta = I.codPlanta  INNER  JOIN  raridade R on A.codRaro = R.codRaro WHERE A.nome = '$v'";
-        $sql = $pdo->query($sql);
-        if($sql->rowCount() > 0) {
-            foreach ($sql->fetchAll() as $user) {
+        $sql = $conexao->query($sql);
+        if($sql->num_rows > 0) {
+            while ($user = $sql->fetch_array()) {
 
                 echo '
-       <ol class="breadcrumb">
-        <li><a href="./">Página  Inicial</a></li>
-        <li><a href="lista.php?codTipo='. $user['codTipo'] .'&tipo='. $user['tipo'].'">'. $user['tipo'] .'</a></li>
-        <li class="active">'. $user['nome'] .'</li>
+       <ol class="breadcrumb" id="nav-secun-plantas-lista">
+        <li><a href="./"><img id="ico-home" src="images/home.ico" alt="imagem do icone referênte a home"></a></li>
+        <li><a id="nav-secun-plantas-nome" href="lista.php?codTipo='. $user['codTipo'] .'&tipo='. $user['tipo'].'" >'. $user['tipo'] .'</a></li>
+        <li class="active" >'. $user['nome'] .'</li>
     </ol>
     <div class="row">
             <div class="pull-right">
 
     <div class="col-sm-6 col-md-6">
                 <img src="images/' . $user['imagem'] . '" class="img-responsive">
-                    <table class="table " id="table-bottom">
+                    <table class="table " id="table-bottom  ">
                         <tr>
                             <td>Nome cientifico: </td>
                             <td>'. $user['nomeCientif'] .'</td>

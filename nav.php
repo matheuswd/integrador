@@ -1,5 +1,5 @@
 <?php
-echo '
+echo'
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" xmlns="http://www.w3.org/1999/html">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -10,18 +10,23 @@ echo '
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="./">Start Bootstrap</a>
+            
+            <a class="navbar-brand " href="./" ><img id="ico-home" src="images/home.ico" alt="imagem do icone referênte a home"></a>
+            
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="planta.php">Planta</a>
+            <ul class="nav navbar-nav " >
+                <li >
+                    <a id="nav-hover" href="planta.php" >Planta</a>
                 </li>
                 <li>
-                    <a href="about.php">Sobre</a>
+                    <a id="nav-hover" href="about.php" id="hover-nav">Sobre</a>
                 </li>
+                
+
             </ul>
+
         </div>
         <!-- /.navbar-collapse -->
     </div>

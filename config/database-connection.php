@@ -1,16 +1,12 @@
-﻿<meta charset="UTF-8" />
-<?php
+﻿<?php
 
-$dsn = 'mysql:dbname=hana;host=localhost';
-$dbUsername = 'root';
-$dbPassword = 'root';
+$host = "localhost";
+$user = "root";
+$pass = "";
+$banco = "hana";
 
-try {
+$conexao = mysqli_connect($host, $user, $pass, $banco) or die ("Problemas com a conexão do Banco de Dados");
 
-	$pdo = new PDO( $dsn, $dbUsername, $dbPassword );
-} catch( PDOException $e ) {
-
-	echo 'A conexão falhou. Confira o erro: ' . $e->getMessage();
-
-}
 ?>
+
+

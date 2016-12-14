@@ -1,36 +1,43 @@
 <?php
 
-$dsn = 'mysql:dbname=hana;host=localhost';
-$dbUsername = 'root';
-$dbPassword = 'root';
+$host = "localhost";
+$user = "root";
+$pass = "";
+$banco = "hana";
 
-session_start();
+$conexao = mysqli_connect($host, $user, $pass, $banco) or die ("Problemas com a conexão do Banco de Dados");
 
-if ( isset( $_POST[ 'username' ] ) && ! empty( $_POST[ 'username' ] ) ) {
-	$username = $_POST[ 'username' ];
+$login = $_POST['login'];
+$senha = $_POST['senha'];
+
+$sqlstring = "select * from user where login = '$login' and senha='$senha'";
+$info = mysqli_query($conexao, $sqlstring);
+if (!$info) {
+    die('Query Inválida: ' . mysqli_error());
 }
 
-if ( isset( $_POST[ 'password' ] ) && ! empty( $_POST[ 'password' ] ) ) {
-	$password = md5($_POST[ 'password' ]);
+$registro = mysqli_num_rows($info);
+
+
+if($registro!=1) {
+
+    echo "Usuário não localizado!!!!!";
+    echo "<br><a href='index.php'>Voltar</a>";
+
+} else {
+
+    echo "Bem vindo ao sistema";
+    $dados = mysqli_fetch_array($info);
+
+    session_start('log');
+    $_SESSION['id'] = $dados['codUser'];
+    $_SESSION['nome'] = $dados['login'];
+    $_SESSION['log'] = 'ativo';
+
+    header("location:index.php");
+
 }
 
-try {
 
-	$database = new PDO( $dsn, $dbUsername, $dbPassword );
-	$query = $database->query( "SELECT * FROM user WHERE username = '$username' AND password = '$password'" );
-
-	if ( $query->rowCount() > 0 ) {
-		$data = $query->fetch();
-		$_SESSION[ 'id' ] = $data[ 'id' ];
-		header( "Location: index.php" );
-	} else {
-		header( "Location: login.php" );
-	}
-
-} catch ( PDOException $e ) {
-
-	echo "Falhou: " . $e->getMessage();
-
-}
-
+?>
 
