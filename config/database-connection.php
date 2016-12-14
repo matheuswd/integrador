@@ -3,7 +3,7 @@
 
 $dsn = 'mysql:dbname=hana;host=localhost';
 $dbUsername = 'root';
-$dbPassword = '';
+$dbPassword = 'root';
 
 try {
 
