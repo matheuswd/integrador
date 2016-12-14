@@ -13,14 +13,12 @@ require_once ('config/database-connection.php');
     </ol>
     <div class="carousel-inner">
         <?php
-        $sql = "SELECT * From carrousel";
-        $sql = $pdo->query($sql);
 
+        $sql = "SELECT imagem FROM carrousel WHERE  obs = 'banner'";
+        $info = mysqli_query($conexao, $sql);
         $a = 'active';
         $w = 1;
-
-        if ($sql->rowCount() > 0) {
-            foreach ($sql->fetchAll() as $values) {
+            while ($values = mysqli_fetch_array($info)) {
                 echo '
                     <div class="item  '. $a .'">
                         <!-- Set the first background image using inline CSS below. -->
@@ -32,7 +30,6 @@ require_once ('config/database-connection.php');
                 $a = '';
                 $w++;
             }
-        }
 
         ?>
     </div>
@@ -47,13 +44,16 @@ require_once ('config/database-connection.php');
     </header>
     <article class="container">
         <?php
-        $sql = "SELECT COUNT(*) FROM tipo";
-        $select = $pdo->query("SELECT tipo FROM tipo ")->fetchAll();
-        // atribuindo a quantidade de linhas retornadas
-        $count = count($select);
+
+        $sql   = "SELECT COUNT(*) FROM tipo";
+        $select = "SELECT codTipo, tipo FROM tipo";
+        $select = $conexao->query($select);
+        $select = $select->fetch_all(MYSQLI_ASSOC);
+
         // imprimindo o resultado
         $cont = 0;
-        for ($as = 0; $as < count($select); $as++) {
+        for ($x = 0; $x < count($select); $x++) {
+
             $sql = "SELECT DISTINCT A.nome, A.codPlanta, A.nomeCientif, A.localizacao, B.codTipo, B.tipo, I.imagem, R.raro 
                       FROM planta A 
                         INNER JOIN tipo B 
@@ -62,18 +62,16 @@ require_once ('config/database-connection.php');
                           on A.codPlanta = I.codPlanta 
                         INNER JOIN raridade R
                           on A.codRaro = R.codRaro
-                      WHERE B.tipo = '". $select[$as]['tipo'] ."' 
+                      WHERE B.tipo = '". $select[$x]['tipo'] ."' 
                       ORDER BY rand() ";
-            $sql = $pdo->query($sql);
+            $sql = $conexao->query($sql);
             echo '
         <div class="row">
-        <h1 class="text-center">' . $select[$as]['tipo'] . '</h1>';
-            if($sql->rowCount() > 0) {
-                $cont = 0;
-                foreach ($sql->fetchAll() as $values) {
-                    $y = 0;
-                    $x = 0;
-                    echo '
+        <h1 class="text-center">' . $select[$x]['tipo'] . '</h1>';
+
+            if( $sql->num_rows > 0) {
+                while ($values = $sql->fetch_array()) {
+                    echo  ' 
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
                 <img src="images/' . $values['imagem'] . '">
@@ -96,22 +94,18 @@ require_once ('config/database-connection.php');
                 </div>
             </div>
         </div>';
-                    $valor = $values['codPlanta'];
-                    if ($valor == $values['codPlanta']) {
-                        continue;
-                    }
-                    $x = 0;
-                    $cont++;
-                    if ($cont > 5){
+                    if ($cont > 1){
                         break;
                     }
+                    $cont++;
+                    $w++;
                 }
                 echo '
         <div class="text-center col-md-12">
             <a href="lista.php?codTipo='. $values['codTipo'] .'&tipo='.$values['tipo'] .'" ><input type="button" class="btn btn-info" value="Veja Mais"></a>
         </div>
     </div>';
-            }
+                }
         }
         ?>
     </article>
@@ -164,4 +158,4 @@ require_once ('config/database-connection.php');
             </div>
         </div>
     </section>
-<?php require_once ('footer.php');
+<?php require_once ('footer.php'); ?>

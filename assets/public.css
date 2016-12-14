@@ -52,6 +52,7 @@ body {
     padding-right: 15px;
 }
 
+
 #nav-secun-plantas-lista{
     background-color: #000;
 }
@@ -60,10 +61,6 @@ body {
 
     color: #fff;
 }
-
-
-
-
 
 a:hover#nav-hover {
     text-decoration: none;
@@ -85,3 +82,9 @@ a:hover#nav-secun-plantas-nome {
     text-decoration: none;
     color: #444444;
     }
+#padl {
+    padding-left: 0px;
+}
+#padr {
+    padding-right: 0px;
+}
