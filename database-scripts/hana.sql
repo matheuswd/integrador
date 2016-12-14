@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 12-Dez-2016 às 18:56
+-- Generation Time: 13-Dez-2016 às 22:54
 -- Versão do servidor: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -29,16 +29,42 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `carrousel` (
   `codCarrousel` int(11) NOT NULL,
-  `imagem` varchar(100) NOT NULL
+  `imagem` varchar(100) NOT NULL,
+  `obs` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `carrousel`
 --
 
-INSERT INTO `carrousel` (`codCarrousel`, `imagem`) VALUES
-(1, 'b52.jpg'),
-(2, 'phantom.jpg');
+INSERT INTO `carrousel` (`codCarrousel`, `imagem`, `obs`) VALUES
+(1, 'b52.jpg', 'banner'),
+(2, 'phantom.jpg', 'banner'),
+(3, 'reddragon.jpg', 'banner'),
+(4, 'lugar1.jpg', 'lugar'),
+(5, 'lugar2.jpg', 'lugar');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `idioma`
+--
+
+CREATE TABLE `idioma` (
+  `codIdioma` int(11) NOT NULL,
+  `pt` text NOT NULL,
+  `en` text NOT NULL,
+  `es` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `idioma`
+--
+
+INSERT INTO `idioma` (`codIdioma`, `pt`, `en`, `es`) VALUES
+(1, 'Conheca a minha historia', 'Hello\nComo voce estáw', 'Hola'),
+(2, 'Tudo bem?', 'Are you okay?', '?Tu estas bien?'),
+(3, ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rhoncus magna eu elit tincidunt dapibus. Cras suscipit convallis urna, vestibulum dignissim leo porta suscipit. Praesent lobortis tellus et est semper sagittis. Nullam metus nunc, fringilla quis enim nec, aliquet imperdiet lorem. Quisque nunc sapien, consequat in ligula ut, malesuada rhoncus justo. Praesent elementum lorem ac orci fringilla, ac mollis mi consequat. Duis dapibus nisi leo, a sollicitudin nibh vulputate a. Phasellus blandit nunc libero, a lobortis lorem porttitor a.\n\nDonec posuere tellus eget elementum vulputate. Maecenas non sodales odio. Curabitur facilisis id dolor a auctor. Quisque et tincidunt libero. Ut pellentesque nibh nisi, at efficitur tellus convallis nec. Curabitur quis dui eget lectus sagittis imperdiet eget sit amet nibh. Fusce sollicitudin pulvinar ligula, eget vestibulum elit. Aliquam facilisis vitae metus non vulputate. Integer et sollicitudin mauris. Etiam purus enim, ultricies vel suscipit eu, suscipit sed nulla. Phasellus posuere nec purus porttitor pharetra. Pellentesque dapibus magna in massa interdum, quis tristique est pharetra. Vivamus sit amet posuere enim.\n\nDonec gravida suscipit congue. Aenean neque sem, aliquam nec sapien sit amet, iaculis consectetur sem. Donec et ligula ante. Ut condimentum bibendum feugiat. In lobortis convallis libero, ac tristique enim tempor vel. Suspendisse id felis orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec tincidunt sollicitudin pretium. ', 'Turpis ipsum dolor pusà amet, PRAEFECTUS adipiscing eit. Quisque rhoncus summa I eit tincidunt dapibus. Cras suscipit Convallis vasellame, vestibulum dignissim le porta suscipit. Hockey Et lobortis Tellus sempre hè dumandata sagittis. Nullam metus Nunc Fringilla recherche culti enim, aliquet imperdiet turpis. Quisque Sapien Nunc, consequat in ligula francese ut, giustu rhoncus malesuada. Hockey elementum turpis A ac orci Fringilla, A ac enchères Mi consequat. Duis leon dapibus Nisi, u sollicitudin vulputate nibh a. Phasellus blandit Nunc uso, la lobortis turpis porttitor a.\n\nPlanta eget Tellus posuere elementum vulputate. Mecenati cada sodales sapientius. Curabitur facilisis id & duluri lu auctor. Quisque Et tincidunt uso. Ut Pellentesque nibh Nisi, à efficitur Convallis Tellus culti. Curabitur eget dui dui recherche sagittis lectus eget imperdiet pusà amet nibh. Fusce sollicitudin pulvinar ligula, eget vestibulum eit. Aliquam facilisis curriculum vitae metus cada vulputate. Cuefficenti Et Mauris sollicitudin. Etiam Purus enim, ultricies V vel suscipit I, suscipit @MiaVanucci terribbili. Phasellus porttitor posuere culti Purus pharetra. Pellentesque interdum summa dapibus in massa recherche tristique hè dumandata pharetra. Vivamus pusà amet posuere enim.\n\nPlanta congue suscipit ncinta grossa. Aenean neque senza aliquam culti Sapien pusà amet, PRAEFECTUS iaculis senza. Planta Et ligula chamois. Ut condimentum Bibendum feugiat. In lobortis Convallis uso, A ac tristique enim V vel tempor. Suspendisse Fustinoni id & orci. Scola aptent taciti A ad litora torquent sociosqu € per conubia Nostra, par inceptos himenaeos. Planta tincidunt sollicitudin pretium.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rhoncus magna I elit tincidunt dapibus. Cras suscipit Convallis Urne, vestibulum dignissim leo suscipit Tür. Nullam et lobortis Tellus semper est sagittis. Nullam metus nunc fringilla wollte enim nec, aliquet imperdiet Lorem. Quisque sapien nunc, consequat in ligula ut, rhoncus malesuada fair. Nullam elementum Lorem ac orci fringilla, ac mollis mi consequat. Duis leo dapibus nisi, die sollicitudin vulputate nibh ein. Phasellus blandit nunc libero, die lobortis Lorem porttitor ein.\n\nDonec eget Tellus posuere elementum vulputate. Maecenas nicht sodales odio. Curabitur facilisis id dolor der auctor. Quisque et tincidunt libero. Ut Pellentesque nibh nisi, bei efficitur Convallis Tellus ang. Curabitur eget dui wollte sagittis lectus eget imperdiet sit amet nibh. Fusce sollicitudin pulvinar ligula, eget vestibulum elit. Aliquam facilisis vitae metus nicht vulputate. Integer et mauris sollicitudin. Etiam purus enim, ultricies vel suscipit I, suscipit sed nulla. Phasellus porttitor posuere ang purus pharetra. Pellentesque interdum magna dapibus in Masse wollte Tristique est pharetra. Vivamus sit amet posuere enim.\n\nDonec congue suscipit schwanger. Aenean neque ohne sapien aliquam ang sit amet, consectetur iaculis ohne. Donec et ligula ante. Ut condimentum bibendum feugiat. In lobortis Convallis libero, ac Tristique enim vel tempor. Suspendisse felis id orci. Klasse aptent Taciti ad litora torquent sociosqu pro conubia nostra, pro inceptos himenaeos. Donec tincidunt sollicitudin Pretium.');
 
 -- --------------------------------------------------------
 
@@ -57,12 +83,14 @@ CREATE TABLE `imagem` (
 --
 
 INSERT INTO `imagem` (`codImagem`, `imagem`, `codPlanta`) VALUES
-(11, 'b52.jpg', 1),
+(11, 'b52_m.jpg', 1),
 (12, 'aue.jpg', 3),
 (13, 'sarracenia.jpg', 2),
 (14, 'sawtooth.jpg', 11),
 (15, 'g3xg14.jpg', 12),
-(16, 'microdente.jpg', 13);
+(16, 'microdente.jpg', 13),
+(18, 'phantom.jpg', 4),
+(19, 'reddragon.jpg', 6);
 
 -- --------------------------------------------------------
 
@@ -85,7 +113,7 @@ CREATE TABLE `planta` (
 --
 
 INSERT INTO `planta` (`codPlanta`, `nome`, `descricao`, `codTipo`, `nomeCientif`, `localizacao`, `codRaro`) VALUES
-(1, 'B52', 'A Dionaea muscipula (Venus Flytrap) é como chama-se a planta que primeiro começou a atrair a atenção dos Botânicos, o seu movimento rápido ao apanhar a presa é um fenômeno único no mundo vegetal. Muito embora Darwin demonstrasse que se tratava verdadeiramente de uma carnívora, o processo de assimilação só foi descoberto durante o século XX.\nEm 1770, em Londres, o comerciante e botânico John Ellis publicou a primeira descrição de "uma nova planta sensível, chamada Dionaea muscipula: ou, de Vênus Papa-moscas A Bela e a Fera: Dionaea, referindo-se a deusa mítica do amor e da beleza (Vênus, filha de Dione), porque é uma pequena planta que dá flores; muscipula, do latim "ratoeira", porque suas folhas se fecham em cerca de meio segundo quando seu mecanismo de captura é ativado. Pequenos “dentes” que ficam nas bordas das folhas formam uma gaiola estreita para o inseto. A folha se fecha para prender sua presa e segrega um líquido que digere o inseto em aproximadamente dez dias. Em seguida, a folha cresce um pouco e abre, pronta para sua próxima vítima.\nA descrição de Ellis teria chegado a terra natal da Dionaea, o litoral pantanoso da Carolina do Norte e Carolina do Sul, em 1771. Naturalmente, a planta já era conhecida por lá. Ela havia sido descrito há uma década atrás por Arthur Dobbs, governador da Carolina do Norte.\nA característica mais visível é a folha em forma de mandíbula com 15 a 20 longos "dentes". A folha é verde se a meia-luz e vermelha com sol direto. O tamanho da folha varia de acordo com a intensidade luminosa.\nAs Dionaeas fazem parte das poucas plantas capazes de movimentar-se no reino vegetal, além desta temos outras como as Droseras e dormideiras ou sensitivas.\n\nO mecanismo pelo qual a armadilha dispara envolve uma complexa interação entre elasticidade, turgidez e crescimento. Quando aberta, a armadilha é convexa, mas quando ativada, ela se torna côncava. É a rápida alternância desses estados que fecha a armadilha, embora a forma exata como isso ocorre ainda seja mal compreendida. ', 1, 'DM. B52 ASDAGiant', 'Norte da America', 1),
+(1, 'B52 a', 'A Dionaea muscipula (Venus Flytrap) é como chama-se a planta que primeiro começou a atrair a atenção dos Botânicos, o seu movimento rápido ao apanhar a presa é um fenômeno único no mundo vegetal. Muito embora Darwin demonstrasse que se tratava verdadeiramente de uma carnívora, o processo de assimilação só foi descoberto durante o século XX.\nEm 1770, em Londres, o comerciante e botânico John Ellis publicou a primeira descrição de "uma nova planta sensível, chamada Dionaea muscipula: ou, de Vênus Papa-moscas A Bela e a Fera: Dionaea, referindo-se a deusa mítica do amor e da beleza (Vênus, filha de Dione), porque é uma pequena planta que dá flores; muscipula, do latim "ratoeira", porque suas folhas se fecham em cerca de meio segundo quando seu mecanismo de captura é ativado. Pequenos “dentes” que ficam nas bordas das folhas formam uma gaiola estreita para o inseto. A folha se fecha para prender sua presa e segrega um líquido que digere o inseto em aproximadamente dez dias. Em seguida, a folha cresce um pouco e abre, pronta para sua próxima vítima.\nA descrição de Ellis teria chegado a terra natal da Dionaea, o litoral pantanoso da Carolina do Norte e Carolina do Sul, em 1771. Naturalmente, a planta já era conhecida por lá. Ela havia sido descrito há uma década atrás por Arthur Dobbs, governador da Carolina do Norte.\nA característica mais visível é a folha em forma de mandíbula com 15 a 20 longos "dentes". A folha é verde se a meia-luz e vermelha com sol direto. O tamanho da folha varia de acordo com a intensidade luminosa.\nAs Dionaeas fazem parte das poucas plantas capazes de movimentar-se no reino vegetal, além desta temos outras como as Droseras e dormideiras ou sensitivas.\n\nO mecanismo pelo qual a armadilha dispara envolve uma complexa interação entre elasticidade, turgidez e crescimento. Quando aberta, a armadilha é convexa, mas quando ativada, ela se torna côncava. É a rápida alternância desses estados que fecha a armadilha, embora a forma exata como isso ocorre ainda seja mal compreendida. ', 1, 'DM. B52 ASDAGiant', 'Norte da America', 1),
 (2, 'Leucophylla Red', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean justo libero, lobortis vitae diam vel, interdum porttitor elit. Morbi non consequat elit, vel pellentesque turpis. Mauris eu tortor odio. Sed ac tempor ipsum, ut sodales mi. Proin sollicitudin, urna a commodo tristique, velit leo dictum lectus, sit amet cursus metus orci ut elit. Praesent cursus laoreet dignissim. Fusce a est non mauris aliquet mattis sed et ipsum. Duis vitae sapien ultrices, commodo velit in, volutpat lorem. Proin non purus sit amet lectus porta lobortis vitae sit amet massa. Sed non magna nulla. Nunc at nisi vulputate, auctor libero sed, pulvinar quam. Quisque blandit pulvinar tellus, mattis posuere tellus tincidunt id. Duis sed faucibus dolor, nec aliquet odio.  Integer blandit in augue in viverra. Etiam nec luctus erat. P', 2, '', '', 2),
 (3, 'Capensis', 'kjaoijs iojiosjio dajosfoigio jaoi', 3, '', '', 1),
 (4, 'Rafflesiana nivea', '', 4, '', '', 2),
@@ -105,16 +133,15 @@ INSERT INTO `planta` (`codPlanta`, `nome`, `descricao`, `codTipo`, `nomeCientif`
 CREATE TABLE `produtor` (
   `codProdutor` int(11) NOT NULL,
   `nome` varchar(40) NOT NULL,
-  `dataNasc` date NOT NULL,
-  `historia` text NOT NULL
+  `dataNasc` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `produtor`
 --
 
-INSERT INTO `produtor` (`codProdutor`, `nome`, `dataNasc`, `historia`) VALUES
-(1, 'Marcos Missao Ono', '1980-06-17', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at leo turpis. Nulla ullamcorper, justo in bibendum semper, justo orci dignissim odio, ut vehicula libero quam sed dui. Suspendisse at porttitor est. Nulla est risus, tristique eu congue consequat, blandit luctus ligula. Sed vitae sapien mi. In hac habitasse platea dictumst. Ut maximus, eros quis ultricies congue, velit urna tincidunt augue, quis ultricies nibh nibh sit amet elit. Nulla facilisi. Quisque ultricies, odio ut aliquet posuere, metus nulla commodo turpis, ut congue sem lectus eget augue. Fusce euismod libero id felis lobortis egestas.\nUt tempor purus ac efficitur mattis. Maecenas nec ultricies odio. Duis fringilla gravida tellus, non rutrum urna luctus imperdiet. Nullam gravida metus in leo lacinia, nec rhoncus magna pulvinar. Nullam vehicula aliquam nunc eget varius. Proin eget risus auctor, mattis tellus tristique, interdum risus. In vitae elit nibh. Maecenas sit amet urna nulla. Donec aliquam enim enim, vitae sodales purus vehicula at. Nullam posuere mollis urna eu ultrices. Morbi ac elementum tortor.\nAenean interdum tincidunt semper. Ut felis nisl, tempus sit amet diam lobortis, varius vehicula nunc. In tellus risus, auctor venenatis sollicitudin a, imperdiet luctus arcu. In posuere auctor mauris vel ornare. Nullam dictum scelerisque ligula, nec lacinia odio rutrum a. Quisque venenatis tellus eget venenatis scelerisque. Cras lectus lacus, eleifend et feugiat et, tincidunt sit amet tellus. Nunc vel tellus non diam aliquam ullamcorper. Ut in urna velit. Nullam in lectus sed ex dictum bibendum sed a ante. Cras id ex a arcu sagittis ultricies quis ac neque. Nam felis est, tincidunt eu faucibus vel, lobortis sed elit. Aliquam consequat nisl id lectus commodo, et commodo ex laoreet.\nNulla porttitor nunc magna. Aliquam id iaculis nisi. Etiam pellentesque, odio eget rutrum placerat, sapien turpis ultrices urna, ut tincidunt nunc tellus nec justo. Integer non nibh urna. Maecenas eu auctor arcu, quis sodales urna. Pellentesque eu pharetra est. Aliquam quis sodales nisi. Maecenas a ultrices tortor. Etiam urna purus, faucibus aliquam efficitur eget, luctus at ante. Nam faucibus luctus elit. Vivamus sit amet pulvinar urna. Mauris dui felis, venenatis a urna eu, accumsan aliquet dui. Pellentesque hendrerit mi non massa gravida, ut sodales arcu laoreet. Etiam mauris diam, porttitor eget arcu sit amet, aliquet tristique augue. Etiam tempor, tortor a posuere commodo, ex dolor malesuada lectus, vel mattis sem lacus sit amet elit. Nulla auctor molestie placerat.\nMorbi facilisis iaculis massa et euismod. Suspendisse sit amet felis condimentum mi dapibus mollis in fermentum ipsum. Duis egestas tristique malesuada. Integer a lorem sed felis finibus cursus. In rutrum eu ex a placerat. Donec a augue maximus, lobortis leo scelerisque, sollicitudin enim. Nunc commodo, mi et vulputate facilisis, quam eros lacinia mi, non viverra augue dui ut quam. Donec tincidunt ultricies semper. ');
+INSERT INTO `produtor` (`codProdutor`, `nome`, `dataNasc`) VALUES
+(1, 'Marcos Missao Ono', '1980-06-17');
 
 -- --------------------------------------------------------
 
@@ -158,6 +185,25 @@ INSERT INTO `tipo` (`codTipo`, `tipo`) VALUES
 (4, 'Nephentes'),
 (5, 'Pinguicula');
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `user`
+--
+
+CREATE TABLE `user` (
+  `codUser` int(11) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `user`
+--
+
+INSERT INTO `user` (`codUser`, `username`, `password`) VALUES
+(1, 'root', 'root');
+
 --
 -- Indexes for dumped tables
 --
@@ -167,6 +213,12 @@ INSERT INTO `tipo` (`codTipo`, `tipo`) VALUES
 --
 ALTER TABLE `carrousel`
   ADD PRIMARY KEY (`codCarrousel`);
+
+--
+-- Indexes for table `idioma`
+--
+ALTER TABLE `idioma`
+  ADD PRIMARY KEY (`codIdioma`);
 
 --
 -- Indexes for table `imagem`
@@ -202,6 +254,12 @@ ALTER TABLE `tipo`
   ADD PRIMARY KEY (`codTipo`);
 
 --
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`codUser`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -209,12 +267,17 @@ ALTER TABLE `tipo`
 -- AUTO_INCREMENT for table `carrousel`
 --
 ALTER TABLE `carrousel`
-  MODIFY `codCarrousel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `codCarrousel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `idioma`
+--
+ALTER TABLE `idioma`
+  MODIFY `codIdioma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `imagem`
 --
 ALTER TABLE `imagem`
-  MODIFY `codImagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `codImagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `planta`
 --
@@ -236,6 +299,11 @@ ALTER TABLE `raridade`
 ALTER TABLE `tipo`
   MODIFY `codTipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `codUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- Constraints for dumped tables
 --
 
@@ -243,7 +311,7 @@ ALTER TABLE `tipo`
 -- Limitadores para a tabela `imagem`
 --
 ALTER TABLE `imagem`
-  ADD CONSTRAINT `imagem_ibfk_1` FOREIGN KEY (`codPlanta`) REFERENCES `planta` (`codPlanta`) ON DELETE NO ACTION ON UPDATE CASCADE;
+  ADD CONSTRAINT `imagem_ibfk_1` FOREIGN KEY (`codPlanta`) REFERENCES `planta` (`codPlanta`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `planta`
