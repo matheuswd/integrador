@@ -51,6 +51,37 @@ body {
     padding-left: 15px;
     padding-right: 15px;
 }
+
+
+#nav-secun-plantas-lista{
+    background-color: #000;
+}
+
+#nav-secun-plantas-nome{
+
+    color: #fff;
+}
+
+a:hover#nav-hover {
+    text-decoration: none;
+    color: #ff5;
+    }
+
+a:hover#nav-secun-plantas-nome {
+    text-decoration: none;
+    color: #ff5;
+    }
+
+
+#link-planta-lista{
+
+    color: #000;
+}
+
+    a:hover#link-planta-lista {
+    text-decoration: none;
+    color: #444444;
+    }
 #padl {
     padding-left: 0px;
 }
