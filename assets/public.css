@@ -57,24 +57,6 @@ body {
     background-color: #fff;
 }*/
 
-#nav-secun-plantas-nome{
-
-
-}
-
-a:hover#nav-hover {
-    text-decoration: none;
-    /*  color: #ff5;*/
-}
-
-a:hover#nav-secun-plantas-nome {
-    text-decoration: none;
-
-}
-a:hover#link-planta-lista {
-    text-decoration: none;
-}
-
 #padl {
     padding-left: 0px;
 }
@@ -106,4 +88,7 @@ h4 {
 }
 #padbot {
     margin-bottom: 10px;
+}
+a:hover {
+    text-decoration: none;
 }

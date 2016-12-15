@@ -15,9 +15,9 @@ $v = $_GET['nome'];
 
                 echo '
        <ol class="breadcrumb" id="nav-secun-plantas-lista">
-        <li><a href="./"><img id="ico-home" src="images/home.ico" alt="imagem do icone referênte a home"></a></li>
+        <li><a id="nav-secun-plantas-nome" href="./">Home</a></li>
         <li><a id="nav-secun-plantas-nome" href="lista.php?codTipo='. $user['codTipo'] .'&tipo='. $user['tipo'].'" >'. $user['tipo'] .'</a></li>
-        <li class="active" >'. $user['nome'] .'</li>
+        <li class="active" id="nav-secun-plantas-nome">'. $user['nome'] .'</li>
     </ol>
     <div class="row">
             <div class="pull-right">
