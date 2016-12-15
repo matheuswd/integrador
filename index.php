@@ -93,7 +93,8 @@ require_once ('config/database-connection.php');
                     </table>
                 </div>
             </div>
-        </div>';
+        </div>';    $ct = $values['codTipo'];
+                    $tp = $values['tipo'];
                     if ($cont > 1){
                         break;
                     }
@@ -102,7 +103,7 @@ require_once ('config/database-connection.php');
                 }
                 echo '
         <div class="text-center col-md-12">
-            <a href="lista.php?codTipo='. $values['codTipo'] .'&tipo='.$values['tipo'] .'" ><input type="button" class="btn btn-info" value="Veja Mais"></a>
+            <a href="lista.php?codTipo='. $ct .'&tipo='. $tp .'" ><input type="button" class="btn btn-info" value="Veja Mais"></a>
         </div>
     </div>';
                 }

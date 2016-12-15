@@ -5,6 +5,11 @@ session_start("log");
 if ($_SESSION['log'] != "ativo") {
     session_destroy();
     header("location:login.php");
+}
+
+if ( !isset( $_SESSION[ 'id' ] ) &&  empty( $_SESSION[ 'id' ] ) ) {
+    header( 'Location: login.php' );
 } else {
-	echo 'hello';
+    echo '<h1>Bem Vindo, '. $_SESSION['nome'] .'</h1>';
+    echo '<p><a href="add.php">Add Item</a></p>';
 }
