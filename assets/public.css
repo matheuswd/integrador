@@ -53,35 +53,40 @@ body {
 }
 
 
-#nav-secun-plantas-lista{
-    background-color: #000;
-}
+/*#nav-secun-plantas-lista{
+    background-color: #fff;
+}*/
 
 #nav-secun-plantas-nome{
 
-    color: #fff;
+    
 }
 
 a:hover#nav-hover {
     text-decoration: none;
-    color: #ff5;
+  /*  color: #ff5;*/
     }
 
 a:hover#nav-secun-plantas-nome {
     text-decoration: none;
-    color: #ff5;
+     color: #0000b2;
     }
 
+#nav-secun-plantas-nome {
+    
+    color: #00f;
+    }
 
 #link-planta-lista{
 
-    color: #000;
+    color: #00f;
 }
 
     a:hover#link-planta-lista {
     text-decoration: none;
-    color: #444444;
+    color: #0000b2;
     }
+
 #padl {
     padding-left: 0px;
 }

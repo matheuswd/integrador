@@ -31,8 +31,8 @@ $ti[1] = $_GET["tipo"];
 
         echo '
    <ol class="breadcrumb" id="nav-secun-plantas-lista">
-        <li><a href="./"><img id="ico-home" src="images/home.ico" alt="imagem do icone referênte a home"></a></li>
-        <li >'. $ti[1] .'</li>
+        <li><a  id="nav-secun-plantas-nome" href="./">Home</a></li>
+        <li id="nav-secun-plantas-nome">'. $ti[1] .'</li>
     </ol>
         <div class="row">';
 
