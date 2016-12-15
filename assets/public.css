@@ -39,7 +39,7 @@ body {
 
 /* Tadashi estilo */
 .plantaimg {
-   padding: 0;
+    padding: 0;
 }
 #down {
     margin-top: 60px;
@@ -53,38 +53,57 @@ body {
 }
 
 
-#nav-secun-plantas-lista{
-    background-color: #000;
-}
+/*#nav-secun-plantas-lista{
+    background-color: #fff;
+}*/
 
 #nav-secun-plantas-nome{
 
-    color: #fff;
+
 }
 
 a:hover#nav-hover {
     text-decoration: none;
-    color: #ff5;
-    }
+    /*  color: #ff5;*/
+}
 
 a:hover#nav-secun-plantas-nome {
     text-decoration: none;
-    color: #ff5;
-    }
 
-
-#link-planta-lista{
-
-    color: #000;
+}
+a:hover#link-planta-lista {
+    text-decoration: none;
 }
 
-    a:hover#link-planta-lista {
-    text-decoration: none;
-    color: #444444;
-    }
 #padl {
     padding-left: 0px;
 }
 #padr {
     padding-right: 0px;
+}
+/*Classe do Footer*/
+footer {
+    padding: 20px 0;
+    border-top: 20px solid #2E8B57;
+    background-color: #3CB371;
+    border-bottom: 20px solid #2E8B57;
+
+}
+/*Classe da Cor da Fonte do Footer*/
+h5,h4,h3 {
+    color:white;
+}
+
+h4 {
+    color:white;
+    font-family: 'tangerine', serif;
+    font-style: italic;
+}
+
+/*Classe dos logos do Footer*/
+.img-responsive{
+    padding: 2px;
+}
+#padbot {
+    margin-bottom: 10px;
 }

@@ -145,18 +145,9 @@ require_once ('config/database-connection.php');
                     </div>
                 </div>
             </form>
-            <div class="col-md-7 pull-right">
+            <div class="col-md-7 pull-left" id="padbot">
                 <h2 class="text-center">Localização</h2>
-                <iframe
-                    width="100%"
-                    height="295px"
-                    frameborder="0" style="border:0"
-                    src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY
-      &q=Butchart+Gardens+Victoria+BC
-      &attribution_source=Google+Maps+Embed+API
-      &attribution_web_url=http://www.butchartgardens.com/
-      &attribution_ios_deep_link_id=comgooglemaps://?daddr=Butchart+Gardens+Victoria+BC" allowfullscreen>
-                </iframe>
+                <img src="images/mapa.png" class="img-responsive">
             </div>
         </div>
     </section>

@@ -23,6 +23,13 @@ echo '
   <h1 class="text-center">'.$resultset[0][$idioma].'</h1>
 </header>
 <article class="container">
+
+    <form method="get">
+        
+        <input type="submit" name="idioma" value="en">
+        <input type="submit" name="idioma" value="pt">
+        <input type="submit" name="idioma" value="es">
+    </form>
     <h1 class="text-center">'.$resultset[1][$idioma].'</h1>';
 
 for($x = 2; $x < count($resultset); $x++) {
@@ -45,14 +52,8 @@ for ($w = 0; $w < count($arquivo); $w++) {
 }
 
 
-
-echo '
+?>
 </article>
-<form method="get">
-<input type="submit" name="idioma" value="en">
-<input type="submit" name="idioma" value="pt">
-<input type="submit" name="idioma" value="es">
-</form>
-';
+<?php
 require_once ('footer.php');
 ?>
