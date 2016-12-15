@@ -23,7 +23,7 @@ $v = $_GET['nome'];
             <div class="pull-right">
 
     <div class="col-sm-6 col-md-6">
-                <img src="images/' . $user['imagem'] . '" class="img-responsive">
+                <img src="images/planta/' . $user['imagem'] . '" class="img-responsive">
                     <table class="table " id="table-bottom  ">
                         <tr>
                             <td>Nome cientifico: </td>

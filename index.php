@@ -74,7 +74,7 @@ require_once ('config/database-connection.php');
                     echo  ' 
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-                <img src="images/' . $values['imagem'] . '">
+                <img src="images/planta/' . $values['imagem'] . '">
                 <div class="caption">
                     <h3 class="text-center"><a href="planta.php?nome=' . $values['nome'] . '" >' . $values['nome'] . '</a></h3>
                     <table class="table " id="table-bottom">
@@ -101,6 +101,7 @@ require_once ('config/database-connection.php');
                     $cont++;
                     $w++;
                 }
+                $cont = 0;
                 echo '
         <div class="text-center col-md-12">
             <a href="lista.php?codTipo='. $ct .'&tipo='. $tp .'" ><input type="button" class="btn btn-info" value="Veja Mais"></a>
