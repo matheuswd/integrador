@@ -67,7 +67,7 @@ require_once ('config/database-connection.php');
             $sql = $conexao->query($sql);
             echo '
         <div class="row">
-        <h1 class="text-center">' . $select[$x]['tipo'] . '</h1>';
+        <h1 class="text-center" >' . $select[$x]['tipo'] . '</h1>';
 
             if( $sql->num_rows > 0) {
                 while ($values = $sql->fetch_array()) {
@@ -76,7 +76,7 @@ require_once ('config/database-connection.php');
             <div class="thumbnail">
                 <img src="images/' . $values['imagem'] . '">
                 <div class="caption">
-                    <h3 class="text-center"><a href="planta.php?nome=' . $values['nome'] . '" >' . $values['nome'] . '</a></h3>
+                    <h3 class="text-center"><a id="nav-secun-plantas-nome" href="planta.php?nome=' . $values['nome'] . '" >' . $values['nome'] . '</a></h3>
                     <table class="table " id="table-bottom">
                         <tr>
                             <td>Nome cientifico: </td>
