@@ -23,9 +23,15 @@ require_once ('config/database-connection.php');
                     <div class="item  '. $a .'">
                         <!-- Set the first background image using inline CSS below. -->
                         <div class="fill" style="background-image: url(\'images/' . $values['imagem'] . '\')"></div>
-                        <div class="carousel-caption">
-                            <h2>Caption '. $w .'</h2>
-                        </div>
+                        <div class="carousel-caption" id="caption-home">
+                            '; if ($w == 1){
+                            echo '<h1>Bem vindo ao Mundo das Plantas Carnivoras</h1>';
+                            } else if ($w == 2) {
+                    echo '<h1>Bienvenido al mundo de las plantas carnívoras</h1>';
+                } else {
+                    echo '<h1>Welcome to the World of Carnivorous Plants</h1>';
+                }
+echo '                     </div>
                     </div>';
                 $a = '';
                 $w++;
@@ -104,7 +110,7 @@ require_once ('config/database-connection.php');
                 $cont = 0;
                 echo '
         <div class="text-center col-md-12">
-            <a href="lista.php?codTipo='. $ct .'&tipo='. $tp .'" ><input type="button" class="btn btn-info" value="Veja Mais"></a>
+            <a href="lista.php?codTipo='. $ct .'&tipo='. $tp .'" ><input type="button" class="btn btn-info botao" value="Veja Mais"></a>
         </div>
     </div>';
                 }
@@ -119,25 +125,25 @@ require_once ('config/database-connection.php');
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nome</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nome">
+                            <input type="text" class="form-control" id="exampleInputEmail1" required placeholder="Nome">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">E-mail</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="E-mail">
+                            <input type="email" class="form-control" id="exampleInputEmail1" required placeholder="E-mail">
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Titulo</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Titulo">
+                            <input type="text" class="form-control" id="exampleInputEmail1" required placeholder="Titulo">
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Comentario</label>
-                            <textarea type="text" class="form-control" id="exampleInputEmail1" placeholder="Comentario"></textarea>
+                            <textarea type="text" class="form-control" id="exampleInputEmail1" required placeholder="Comentario"></textarea>
                         </div>
                     </div>
                     <div class="col-md-12">

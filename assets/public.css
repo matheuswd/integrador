@@ -59,9 +59,11 @@ body {
 
 #padl {
     padding-left: 0px;
+    padding-right: 15px;
 }
 #padr {
     padding-right: 0px;
+    padding-left: 15px;
 }
 /*Classe do Footer*/
 footer {
@@ -70,6 +72,9 @@ footer {
     background-color: #3CB371;
     border-bottom: 20px solid #2E8B57;
 
+}
+.navbar-color {
+    background-color: #2E8B57;
 }
 /*Classe da Cor da Fonte do Footer*/
 h5,h4,h3 {
@@ -91,4 +96,18 @@ h4 {
 }
 a:hover {
     text-decoration: none;
+}
+a.colorw {
+    color: #ececec;
+}
+#links-footer {
+    margin-top: 35px;
+}
+#nw-footer{
+    margin-top: 40px;
+}
+#caption-home {
+    margin-bottom: 200px;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.32);
 }

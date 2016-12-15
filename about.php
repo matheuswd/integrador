@@ -43,10 +43,10 @@ for ($w = 0; $w < count($arquivo); $w++) {
     $resultset1 = $stm1->fetch_all(MYSQLI_ASSOC);
     // Conexao com o banco
     if ($w == 0 ){
-        echo '<img src="images/' . $resultset1[0]['imagem'] . '" class="pull-left col-md-4" id="padl">';
+        echo '<img src="images/' . $resultset1[0]['imagem'] . '" class="pull-left col-md-4 img-responsive" id="padl">';
     }
     if ($w == 2) {
-        echo '<img src="images/' . $resultset1[1]['imagem'] . '" class="pull-right col-md-4" id="padr">';
+        echo '<img src="images/' . $resultset1[1]['imagem'] . '" class="pull-right col-md-4 img-responsive" id="padr">';
     }
 }
 }

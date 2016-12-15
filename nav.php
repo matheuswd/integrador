@@ -18,7 +18,7 @@ echo'
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav " >
                 <li >
-                    <a id="nav-hover" href="planta.php" >Planta</a>
+                    <a id="nav-hover" href="#footer" >Contato</a>
                 </li>
                 <li>
                     <a id="nav-hover" href="about.php" id="hover-nav">Sobre</a>
