@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 14-Dez-2016 às 12:02
+-- Generation Time: 15-Dez-2016 às 16:37
 -- Versão do servidor: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -17,8 +17,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
-  create Database `hana`;
-  use  `hana`;
+create Database: `hana`;
+use `hana`;
 --
 
 -- --------------------------------------------------------
@@ -75,7 +75,7 @@ INSERT INTO `idioma` (`codIdioma`, `pt`, `en`, `es`) VALUES
 CREATE TABLE `imagem` (
   `codImagem` int(11) NOT NULL,
   `imagem` text NOT NULL,
-  `codPlanta` int(11) NOT NULL
+  `codPlanta` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -83,12 +83,16 @@ CREATE TABLE `imagem` (
 --
 
 INSERT INTO `imagem` (`codImagem`, `imagem`, `codPlanta`) VALUES
-(11, 'b52_m.jpg', 1),
-(13, 'sarracenia.jpg', 2),
-(14, 'sawtooth.jpg', 11),
-(15, 'g3xg14.jpg', 12),
-(16, 'microdente.jpg', 13),
-(19, 'reddragon.jpg', 6);
+(44, '1.jpg', 1),
+(45, '2.jpg', 2),
+(46, '3.jpg', 3),
+(47, '4.jpg', 4),
+(48, '5.jpg', 5),
+(49, '6.jpg', 6),
+(50, '7.jpg', 7),
+(51, '8.jpg', 8),
+(52, '9.jpg', 9),
+(53, '10.jpg', 10);
 
 -- --------------------------------------------------------
 
@@ -111,13 +115,16 @@ CREATE TABLE `planta` (
 --
 
 INSERT INTO `planta` (`codPlanta`, `nome`, `descricao`, `codTipo`, `nomeCientif`, `localizacao`, `codRaro`) VALUES
-(1, 'B52 a', 'A Dionaea muscipula (Venus Flytrap) é como chama-se a planta que primeiro começou a atrair a atenção dos Botânicos, o seu movimento rápido ao apanhar a presa é um fenômeno único no mundo vegetal. Muito embora Darwin demonstrasse que se tratava verdadeiramente de uma carnívora, o processo de assimilação só foi descoberto durante o século XX.\nEm 1770, em Londres, o comerciante e botânico John Ellis publicou a primeira descrição de "uma nova planta sensível, chamada Dionaea muscipula: ou, de Vênus Papa-moscas A Bela e a Fera: Dionaea, referindo-se a deusa mítica do amor e da beleza (Vênus, filha de Dione), porque é uma pequena planta que dá flores; muscipula, do latim "ratoeira", porque suas folhas se fecham em cerca de meio segundo quando seu mecanismo de captura é ativado. Pequenos “dentes” que ficam nas bordas das folhas formam uma gaiola estreita para o inseto. A folha se fecha para prender sua presa e segrega um líquido que digere o inseto em aproximadamente dez dias. Em seguida, a folha cresce um pouco e abre, pronta para sua próxima vítima.\nA descrição de Ellis teria chegado a terra natal da Dionaea, o litoral pantanoso da Carolina do Norte e Carolina do Sul, em 1771. Naturalmente, a planta já era conhecida por lá. Ela havia sido descrito há uma década atrás por Arthur Dobbs, governador da Carolina do Norte.\nA característica mais visível é a folha em forma de mandíbula com 15 a 20 longos "dentes". A folha é verde se a meia-luz e vermelha com sol direto. O tamanho da folha varia de acordo com a intensidade luminosa.\nAs Dionaeas fazem parte das poucas plantas capazes de movimentar-se no reino vegetal, além desta temos outras como as Droseras e dormideiras ou sensitivas.\n\nO mecanismo pelo qual a armadilha dispara envolve uma complexa interação entre elasticidade, turgidez e crescimento. Quando aberta, a armadilha é convexa, mas quando ativada, ela se torna côncava. É a rápida alternância desses estados que fecha a armadilha, embora a forma exata como isso ocorre ainda seja mal compreendida. ', 1, 'DM. B52 ASDAGiant', 'Norte da America', 1),
-(2, 'Leucophylla Red', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean justo libero, lobortis vitae diam vel, interdum porttitor elit. Morbi non consequat elit, vel pellentesque turpis. Mauris eu tortor odio. Sed ac tempor ipsum, ut sodales mi. Proin sollicitudin, urna a commodo tristique, velit leo dictum lectus, sit amet cursus metus orci ut elit. Praesent cursus laoreet dignissim. Fusce a est non mauris aliquet mattis sed et ipsum. Duis vitae sapien ultrices, commodo velit in, volutpat lorem. Proin non purus sit amet lectus porta lobortis vitae sit amet massa. Sed non magna nulla. Nunc at nisi vulputate, auctor libero sed, pulvinar quam. Quisque blandit pulvinar tellus, mattis posuere tellus tincidunt id. Duis sed faucibus dolor, nec aliquet odio.  Integer blandit in augue in viverra. Etiam nec luctus erat. P', 2, '', '', 2),
-(6, 'Red Dragon', 'Em Red Dragon Inn, vocÃª e seus amigos sÃ£o um grupo de herÃ³is aventureiros de fantasia. VocÃª invadiu a masmorra, matou os monstros, e tomou o seu tesouro. Agora vocÃª estÃ¡ de volta, e que melhor maneira de comemorar a sua vitÃ³ria mais recente do que passar uma noite no Red Dragon Inn?\nVocÃª e seus companheiros de aventuras vÃ£o passar a noite bebendo e jogando. A Ãºltima pessoa que Ã© ao mesmo tempo sÃ³bria o suficiente para permanecer consciente e perspicaz o suficiente para sustentar suas moedas de ouro ganha o jogo. Comentario', 1, 'DM. Red Fucking Dragon', 'Sudeste da Africa', 3),
-(10, 'Sawtooth', 'A Dionaea muscipula (Venus Flytrap) é como chama-se a planta que primeiro começou a atrair a atenção dos Botânicos, o seu movimento rápido ao apanhar a presa é um fenômeno único no mundo vegetal. Muito embora Darwin demonstrasse que se tratava verdadeiramente de uma carnívora, o processo de assimilação só foi descoberto durante o século XX.\r\nEm 1770, em Londres, o comerciante e botânico John Ellis publicou a primeira descrição de "uma nova planta sensível, chamada Dionaea muscipula: ou, de Vênus Papa-moscas A Bela e a Fera: Dionaea, referindo-se a deusa mítica do amor e da beleza (Vênus, filha de Dione), porque é uma pequena planta que dá flores; muscipula, do latim "ratoeira", porque suas folhas se fecham em cerca de meio segundo quando seu mecanismo de captura é ativado. Pequenos “dentes” que ficam nas bordas das folhas formam uma gaiola estreita para o inseto. A folha se fecha para prender sua presa e segrega um líquido que digere o inseto em aproximadamente dez dias. Em seguida, a folha cresce um pouco e abre, pronta para sua próxima vítima.\r\nA descrição de Ellis teria chegado a terra natal da Dionaea, o litoral pantanoso da Carolina do Norte e Carolina do Sul, em 1771. Naturalmente, a planta já era conhecida por lá. Ela havia sido descrito há uma década atrás por Arthur Dobbs, governador da Carolina do Norte.\r\nA característica mais visível é a folha em forma de mandíbula com 15 a 20 longos "dentes". A folha é verde se a meia-luz e vermelha com sol direto. O tamanho da folha varia de acordo com a intensidade luminosa.\r\nAs Dionaeas fazem parte das poucas plantas capazes de movimentar-se no reino vegetal, além desta temos outras como as Droseras e dormideiras ou sensitivas.\r\n\r\nO mecanismo pelo qual a armadilha dispara envolve uma complexa interação entre elasticidade, turgidez e crescimento. Quando aberta, a armadilha é convexa, mas quando ativada, ela se torna côncava. É a rápida alternância desses estados que fecha a armadilha, embora a forma exata como isso ocorre ainda seja mal compreendida.', 1, 'DM. Sawtooth au II', 'Lado norte do Monte Fuji', 3),
-(11, 'Sawtooth', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean justo libero, lobortis vitae diam vel, interdum porttitor elit. Morbi non consequat elit, vel pellentesque turpis. Mauris eu tortor odio. Sed ac tempor ipsum, ut sodales mi. Proin sollicitudin, urna a commodo tristique, velit leo dictum lectus, sit amet cursus metus orci ut elit. Praesent cursus laoreet dignissim. Fusce a est non mauris aliquet mattis sed et ipsum. Duis vitae sapien ultrices, commodo velit in, volutpat lorem. Proin non purus sit amet lectus porta lobortis vitae sit amet massa. Sed non magna nulla. Nunc at nisi vulputate, auctor libero sed, pulvinar quam. Quisque blandit pulvinar tellus, mattis posuere tellus tincidunt id. Duis sed faucibus dolor, nec aliquet odio.\r\n\r\nInteger blandit in augue in viverra. Etiam nec luctus erat. Phasellus quis sem id eros tincidunt lacinia. Nullam sodales mollis neque ut auctor. Aliquam et lectus arcu. Vivamus nec eros magna. Nam vitae venenatis tellus. Quisque at odio non lorem auctor egestas. Fusce eu ligula turpis. In sodales, justo sit amet porttitor malesuada, odio dui ullamcorper lectus, vel dignissim tellus magna id mauris. Cras tristique tincidunt neque, vitae aliquam tortor iaculis in. Phasellus id tortor tincidunt, auctor justo ut, interdum felis. Fusce congue cursus risus, a consectetur metus dignissim sit amet. ', 1, 'sawtooth II on Maxe', 'Sudeste da Europa', 2),
-(12, 'G3XG14', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean justo libero, lobortis vitae diam vel, interdum porttitor elit. Morbi non consequat elit, vel pellentesque turpis. Mauris eu tortor odio. Sed ac tempor ipsum, ut sodales mi. Proin sollicitudin, urna a commodo tristique, velit leo dictum lectus, sit amet cursus metus orci ut elit. Praesent cursus laoreet dignissim. Fusce a est non mauris aliquet mattis sed et ipsum. Duis vitae sapien ultrices, commodo velit in, volutpat lorem. Proin non purus sit amet lectus porta lobortis vitae sit amet massa. Sed non magna nulla. Nunc at nisi vulputate, auctor libero sed, pulvinar quam. Quisque blandit pulvinar tellus, mattis posuere tellus tincidunt id. Duis sed faucibus dolor, nec aliquet odio.\r\n\r\nInteger blandit in augue in viverra. Etiam nec luctus erat. Phasellus quis sem id eros tincidunt lacinia. Nullam sodales mollis neque ut auctor. Aliquam et lectus arcu. Vivamus nec eros magna. Nam vitae venenatis tellus. Quisque at odio non lorem auctor egestas. Fusce eu ligula turpis. In sodales, justo sit amet porttitor malesuada, odio dui ullamcorper lectus, vel dignissim tellus magna id mauris. Cras tristique tincidunt neque, vitae aliquam tortor iaculis in. Phasellus id tortor tincidunt, auctor justo ut, interdum felis. Fusce congue cursus risus, a consectetur metus dignissim sit amet. ', 1, 'G3 ex G-14th', 'Oeste do Chile', 3),
-(13, 'Microdente', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean justo libero, lobortis vitae diam vel, interdum porttitor elit. Morbi non consequat elit, vel pellentesque turpis. Mauris eu tortor odio. Sed ac tempor ipsum, ut sodales mi. Proin sollicitudin, urna a commodo tristique, velit leo dictum lectus, sit amet cursus metus orci ut elit. Praesent cursus laoreet dignissim. Fusce a est non mauris aliquet mattis sed et ipsum. Duis vitae sapien ultrices, commodo velit in, volutpat lorem. Proin non purus sit amet lectus porta lobortis vitae sit amet massa. Sed non magna nulla. Nunc at nisi vulputate, auctor libero sed, pulvinar quam. Quisque blandit pulvinar tellus, mattis posuere tellus tincidunt id. Duis sed faucibus dolor, nec aliquet odio.\r\n\r\nInteger blandit in augue in viverra. Etiam nec luctus erat. Phasellus quis sem id eros tincidunt lacinia. Nullam sodales mollis neque ut auctor. Aliquam et lectus arcu. Vivamus nec eros magna. Nam vitae venenatis tellus. Quisque at odio non lorem auctor egestas. Fusce eu ligula turpis. In sodales, justo sit amet porttitor malesuada, odio dui ullamcorper lectus, vel dignissim tellus magna id mauris. Cras tristique tincidunt neque, vitae aliquam tortor iaculis in. Phasellus id tortor tincidunt, auctor justo ut, interdum felis. Fusce congue cursus risus, a consectetur metus dignissim sit amet. ', 1, 'Micro and moonth ', 'Sul da America do Sul', 3);
+(1, '1', '1', 1, '1', '1', 1),
+(2, '2', '2', 1, '2', '2', 1),
+(3, '3', '3', 1, '3', '3', 1),
+(4, '4', '4', 1, '4', '4', 1),
+(5, '5', '5', 2, '5', '5', 2),
+(6, '6', '6', 2, '6', '6', 2),
+(7, '7', '7', 2, '7', '7', 3),
+(8, '8', '8', 2, '8', '8', 1),
+(9, '9', '9', 2, '9', '9', 1),
+(10, '10', '10', 2, '10', '10', 2);
 
 -- --------------------------------------------------------
 
@@ -269,12 +276,12 @@ ALTER TABLE `idioma`
 -- AUTO_INCREMENT for table `imagem`
 --
 ALTER TABLE `imagem`
-  MODIFY `codImagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `codImagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 --
 -- AUTO_INCREMENT for table `planta`
 --
 ALTER TABLE `planta`
-  MODIFY `codPlanta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `codPlanta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
 --
 -- AUTO_INCREMENT for table `produtor`
 --
@@ -303,7 +310,7 @@ ALTER TABLE `user`
 -- Limitadores para a tabela `imagem`
 --
 ALTER TABLE `imagem`
-  ADD CONSTRAINT `imagem_ibfk_1` FOREIGN KEY (`codPlanta`) REFERENCES `planta` (`codPlanta`) ON DELETE CASCADE ON UPDATE NO ACTION;
+  ADD CONSTRAINT `imagem_ibfk_1` FOREIGN KEY (`codPlanta`) REFERENCES `planta` (`codPlanta`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Limitadores para a tabela `planta`

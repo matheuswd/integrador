@@ -45,7 +45,7 @@ $ti[1] = $_GET["tipo"];
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
             
-                <img src="images/'. $values['imagem'] .'">
+                <img src="images/planta/'. $values['imagem'] .'">
                 <div class="caption">
                     <h3 class="text-center"><a id="link-planta-lista" href="planta.php?nome='. $values['nome'] .'" >' . $values['nome'] . '</a></h3>
                     <table class="table " id="table-bottom">
