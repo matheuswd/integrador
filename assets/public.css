@@ -39,7 +39,7 @@ body {
 
 /* Tadashi estilo */
 .plantaimg {
-   padding: 0;
+    padding: 0;
 }
 #down {
     margin-top: 60px;
@@ -57,39 +57,57 @@ body {
     background-color: #fff;
 }*/
 
-#nav-secun-plantas-nome{
-
-    
-}
-
-a:hover#nav-hover {
-    text-decoration: none;
-  /*  color: #ff5;*/
-    }
-
-a:hover#nav-secun-plantas-nome {
-    text-decoration: none;
-     color: #0000b2;
-    }
-
-#nav-secun-plantas-nome {
-    
-    color: #00f;
-    }
-
-#link-planta-lista{
-
-    color: #00f;
-}
-
-    a:hover#link-planta-lista {
-    text-decoration: none;
-    color: #0000b2;
-    }
-
 #padl {
     padding-left: 0px;
+    padding-right: 15px;
 }
 #padr {
     padding-right: 0px;
+    padding-left: 15px;
+}
+/*Classe do Footer*/
+footer {
+    padding: 20px 0;
+    border-top: 20px solid #2E8B57;
+    background-color: #3CB371;
+    border-bottom: 20px solid #2E8B57;
+
+}
+.navbar-color {
+    background-color: #2E8B57;
+}
+/*Classe da Cor da Fonte do Footer*/
+h5,h4,h3 {
+    color:white;
+}
+
+h4 {
+    color:white;
+    font-family: 'tangerine', serif;
+    font-style: italic;
+}
+
+/*Classe dos logos do Footer*/
+.img-responsive{
+    padding: 2px;
+}
+#padbot {
+    margin-bottom: 10px;
+}
+a:hover {
+    text-decoration: none;
+}
+a.colorw {
+    color: #ececec;
+}
+#links-footer {
+    margin-top: 35px;
+}
+#nw-footer{
+    margin-top: 40px;
+}
+#caption-home {
+    margin-bottom: 200px;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.32);
 }

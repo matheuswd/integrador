@@ -23,6 +23,13 @@ echo '
   <h1 class="text-center">'.$resultset[0][$idioma].'</h1>
 </header>
 <article class="container">
+
+    <form method="get">
+        
+        <input type="submit" name="idioma" value="en">
+        <input type="submit" name="idioma" value="pt">
+        <input type="submit" name="idioma" value="es">
+    </form>
     <h1 class="text-center">'.$resultset[1][$idioma].'</h1>';
 
 for($x = 2; $x < count($resultset); $x++) {
@@ -36,23 +43,17 @@ for ($w = 0; $w < count($arquivo); $w++) {
     $resultset1 = $stm1->fetch_all(MYSQLI_ASSOC);
     // Conexao com o banco
     if ($w == 0 ){
-        echo '<img src="images/' . $resultset1[0]['imagem'] . '" class="pull-left col-md-4" id="padl">';
+        echo '<img src="images/' . $resultset1[0]['imagem'] . '" class="pull-left col-md-4 img-responsive" id="padl">';
     }
     if ($w == 2) {
-        echo '<img src="images/' . $resultset1[1]['imagem'] . '" class="pull-right col-md-4" id="padr">';
+        echo '<img src="images/' . $resultset1[1]['imagem'] . '" class="pull-right col-md-4 img-responsive" id="padr">';
     }
 }
 }
 
 
-
-echo '
+?>
 </article>
-<form method="get">
-<input type="submit" name="idioma" value="en">
-<input type="submit" name="idioma" value="pt">
-<input type="submit" name="idioma" value="es">
-</form>
-';
+<?php
 require_once ('footer.php');
 ?>
